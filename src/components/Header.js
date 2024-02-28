@@ -1,5 +1,5 @@
 import React from "react";
-import { TouchableOpacity, Text, StyleSheet, View, Image } from "react-native";
+import { TouchableOpacity, Text, StyleSheet, View, Image, Platform } from "react-native";
 import { Black, White } from "../constants";
 
 
@@ -22,6 +22,7 @@ export default function Header({ onBack }) {
 const styles = StyleSheet.create({
   Container: {
     width: '100%',
+    marginTop: Platform.OS === 'ios' ? 24 : 0,
     paddingTop: 10,
     paddingBottom: 5,
     backgroundColor: White,
@@ -39,13 +40,13 @@ const styles = StyleSheet.create({
     alignItems: 'center'
   },
   BackArrow: {
-    height: 25,
-    width: 25,
+    height: 20,
+    width: 20,
   },
   MidContainer: {
     height: 30,
     width: 30,
-    flex: 1,
+    flex: 5,
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
@@ -54,8 +55,8 @@ const styles = StyleSheet.create({
   },
   Title: {
     color: Black,
-    fontSize: 20,
-    fontWeight: 'bold'
+    fontSize: 18,
+    fontWeight: '600'
   },
   RightContainer: {
     flex: 1,

@@ -1,6 +1,6 @@
 import React from "react";
 import { StyleSheet, Text } from "react-native";
-import { AppColor } from "../constants";
+import { Black } from "../constants";
 
 
 export default function Title({ style, title }) {
@@ -11,7 +11,7 @@ export default function Title({ style, title }) {
 
 const styles = StyleSheet.create({
   Title: {
-    color: AppColor,
+    color: Black,
     fontSize: 30,
     fontWeight: 'bold'
   }

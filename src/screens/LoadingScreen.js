@@ -6,7 +6,7 @@ function LoadingScreen() {
     return (
         <View style={styles.Container}>
             <ActivityIndicator size="large" color={AppColor} />
-            <Text style={styles.Text}>Checking Session . . .</Text>
+            <Text style={styles.Text}>Fetching movies . . .</Text>
         </View>
     );
 }
