@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { View, StyleSheet, ScrollView } from "react-native";
 import Config from 'react-native-config'
 
-import { Silver, White } from "../constants";
+import { MOVIE_API_URL, White } from "../constants";
 import Tabs from "../components/Tab";
 import LoadingScreen from "./LoadingScreen";
 import MovieCard from "../components/MovieCard";
@@ -15,7 +15,7 @@ function OverViewScreen({ navigation }) {
 
   useEffect(() => {
     setLoading(true)
-    fetch(`${Config.MOVIE_API_URL.replace('FILTER', selectedTab === 'Popular' ? 'popularity.desc' : 'primary_release_date.desc')}`, {
+    fetch(`${MOVIE_API_URL.replace('FILTER', selectedTab === 'Popular' ? 'popularity.desc' : 'primary_release_date.desc')}`, {
       method: 'GET',
       headers: {
         accept: 'application/json',

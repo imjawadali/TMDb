@@ -1,7 +1,6 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { TouchableOpacity, Text, StyleSheet, Image, View } from "react-native";
-import { Black, Grey, Silver } from "../constants";
-import Config from 'react-native-config'
+import { Black, Grey, IMAGE_URL, Silver } from "../constants";
 import { getFormattedDate } from "../helpers";
 
 
@@ -12,7 +11,7 @@ export default function MovieCard({ movie, onPress }) {
       onPress={onPress}
     >
       <Image style={styles.Image} source={{
-        uri: `${Config.IMAGE_URL}${movie.poster_path}`
+        uri: `${IMAGE_URL}${movie.poster_path}`
       }} />
       <View style={styles.TextContainer}>
         <View style={{ flex: 1 }}>

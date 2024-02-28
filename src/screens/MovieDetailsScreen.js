@@ -4,7 +4,7 @@ import Config from 'react-native-config'
 
 import Title from "../components/Title";
 import Separator from "../components/Separator";
-import { AppColor, Black, Grey, White } from "../constants";
+import { AppColor, Black, Grey, IMAGE_URL, MOVIE_DETAIL_API_URL, White } from "../constants";
 import LoadingScreen from "./LoadingScreen";
 import { getDuration, getFormattedCurrency, getFormattedDate } from "../helpers";
 
@@ -16,7 +16,7 @@ function MovieDetailsScreen({ route }) {
 
   useEffect(() => {
     setLoading(true)
-    fetch(`${Config.MOVIE_DETAIL_API_URL.replace('MOVIE_ID', movieId)}`, {
+    fetch(`${MOVIE_DETAIL_API_URL.replace('MOVIE_ID', movieId)}`, {
       method: 'GET',
       headers: {
         accept: 'application/json',
@@ -40,13 +40,13 @@ function MovieDetailsScreen({ route }) {
       : <ScrollView style={styles.ScrollContainer}>
         <View style={styles.BannerImageContainer}>
           <Image style={[styles.BannerImage, { position: 'absolute' }]} source={{
-            uri: `${Config.IMAGE_URL}${movieDetails.backdrop_path || movieDetails.poster_path}`
+            uri: `${IMAGE_URL}${movieDetails.backdrop_path || movieDetails.poster_path}`
           }} />
           <View style={[styles.BannerImage, { opacity: 0.7 }]}>
             <View style={styles.Container}>
               <View style={styles.TopContainer}>
                 <Image style={styles.Image} source={{
-                  uri: `${Config.IMAGE_URL}${movieDetails.poster_path}`
+                  uri: `${IMAGE_URL}${movieDetails.poster_path}`
                 }} />
                 <View style={styles.TextContainer}>
                   <View style={{ flexDirection: 'row' }}>
