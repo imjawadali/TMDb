@@ -57,10 +57,10 @@ function MovieDetailsScreen({ route }) {
                   <View style={{ flexDirection: 'row' }}>
                     <Text style={[styles.SubText, { color: Black }]} numberOfLines={1} ellipsizeMode='tail'>{movieDetails.tagline}</Text>
                   </View>
-                  <Text style={styles.SubText}>Duration:
+                  <Text style={styles.SubText}>Release date:
                     <Text style={{ color: Black }}> {getFormattedDate(movieDetails.release_date)}</Text>
                   </Text>
-                  <Text style={styles.SubText}>Language:
+                  <Text style={styles.SubText}>Duration:
                     <Text style={{ color: Black }}> {getDuration(movieDetails.runtime)}</Text>
                   </Text>
                 </View>
